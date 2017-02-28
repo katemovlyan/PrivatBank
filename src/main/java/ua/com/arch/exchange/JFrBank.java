@@ -33,11 +33,9 @@ public class JFrBank extends javax.swing.JFrame {
         jButtonBuy = new JButton();
         jButtonSale = new JButton();
 
-        jPanel2.add(jTextFieldFromAmount);
-
         jTextFieldFromAmount.setForeground(new java.awt.Color(153, 153, 153));
         jTextFieldFromAmount.setText("Enter your amount...");
-        jComboBoxFromCurrency.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxFromCurrency.setModel(new DefaultComboBoxModel<>(new String[]{"Item 1", "Item 2", "Item 3", "Item 4"}));
         jTextFieldFromAmount.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTextFieldFromAmountMouseClicked(evt);
@@ -45,7 +43,7 @@ public class JFrBank extends javax.swing.JFrame {
         });
 
         jTextFieldToAmount.setText("");
-        jComboBoxToCurrency.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxToCurrency.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Item 1", "Item 2", "Item 3", "Item 4"}));
 
         jButtonBuy.setText("Buy");
         jButtonBuy.addActionListener(new java.awt.event.ActionListener() {
@@ -83,8 +81,7 @@ public class JFrBank extends javax.swing.JFrame {
                                 .addContainerGap())
         );
 
-
-        jPanel2Layout.linkSize(SwingConstants.HORIZONTAL, new java.awt.Component[] {jComboBoxFromCurrency, jComboBoxToCurrency});
+        jPanel2Layout.linkSize(SwingConstants.HORIZONTAL, new java.awt.Component[]{jComboBoxFromCurrency, jComboBoxToCurrency});
 
         jPanel2Layout.setVerticalGroup(
                 jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -104,7 +101,7 @@ public class JFrBank extends javax.swing.JFrame {
                                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        jPanel2Layout.linkSize(SwingConstants.VERTICAL, new java.awt.Component[] {jComboBoxFromCurrency, jComboBoxToCurrency, jTextFieldFromAmount, jTextFieldToAmount});
+        jPanel2Layout.linkSize(SwingConstants.VERTICAL, new java.awt.Component[]{jComboBoxFromCurrency, jComboBoxToCurrency, jTextFieldFromAmount, jTextFieldToAmount});
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,10 +118,7 @@ public class JFrBank extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        //pack();
-    }// </editor-fold>
-
+    }
 
     private void customInit() {
         customInitComboBox(jComboBoxFromCurrency);
@@ -153,7 +147,6 @@ public class JFrBank extends javax.swing.JFrame {
         double amount = Double.parseDouble(jTextFieldFromAmount.getText());
         return rate * amount;
     }
-
 
     private void jButtonBuyActionPerformed(java.awt.event.ActionEvent evt) {
         jTextFieldToAmount.setText(String.format("%.2f", result(true)));
